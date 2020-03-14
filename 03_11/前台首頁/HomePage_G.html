@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<style type="text/css">
+	body{
+		margin: 0px;
+	}
+	#wapper{
+		height:100vh;
+		/*background-image: linear-gradient(to top left,black,#0F2540,#0F2540,black);*/
+		/*background-color: rgb(203,64,66);
+		#D7C4BB*/
+		background-image: linear-gradient(to top left,#E83015,rgb(203,64,66),rgb(203,64,66),#D7C4BB);
+		overflow:hidden;
+	}
+	
+
+	h1{
+		margin-bottom:10px;
+	}
+	#home_left{
+		width:100%;
+		height:100%;
+		float:left;
+		/*background-color:black;*/
+		transition:2s;
+	}
+	#home_right{
+		width:0%;
+		height:100vh;
+		/*background-color:green;*/
+		text-align: center;
+		float:left;
+		transition:2s;
+		overflow-x:hidden;
+		overflow-y:auto;
+		/*background-color:#000;*/
+		margin: 0px;
+		padding: 0px;
+		/*background-color:#0B2340;*/
+		background-image: url('190613_4012-ob6shneqt9148osyhptrfpr8kf1uxznq6m8p6poz7k.jpg');
+		/*在body背景放圖*/
+		/*background-color:rgb(191,173,111);*/
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		
+	}
+	._block{
+		width:1000px;
+		height:auto;
+		padding:10px;
+		transition:2s; 
+		margin-top:30px;
+		margin-bottom:50px;
+	
+		background-image: url('background.jpg');/*在body背景放圖*/
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		/*opacity:0.5;*/
+		position:relative;
+		/*left:10%;*/
+		box-shadow:5px 5px 12px black;
+	} 
+	._block div{
+		width:900px;
+		margin-left:50px;
+		height:auto;
+		text-align:center;
+		opacity:1;
+	} 
+	
+	#video{
+		/*background-color:green;*/
+		margin-top:5%;
+		width:100%;
+		height:80%;
+		position: absolute;
+		overflow: hidden;
+		/*-webkit-filter: grayscale(80%); 
+   		filter: grayscale(80%);*/
+   		/*-webkit-filter: sepia(80%);  Safari 
+    	filter: sepia(80%);*/
+   		transition:2s;
+	}
+
+	/*-webkit-filter: sepia(80%);  Safari 
+    	filter: sepia(100%);*/
+    /*-webkit-filter: grayscale(80%);  Safari 
+   		filter: grayscale(80%);*/
+   	/*-webkit-filter: contrast(30%); /* Safari */
+	#video video{
+		width:1500px;
+		height:auto;
+		position:relative;
+		/*left:20%;*/
+		top:-40%;
+    	filter: contrast(150%);
+    	-webkit-filter:contrast(150%);
+    	/*-moz-transform:scaleX(-1);
+   		 -webkit-transform:scaleX(-1);
+   		 -o-transform:scaleX(-1);
+    	transform:scaleX(-1);
+    	filter:FlipV;*/
+    	transition:2s;
+    	box-shadow:0 0 50px 30px #ffffff inset;
+	}
+	#main_left{
+		width:100px;
+		height:500px;
+		float:left;
+		position:relative;
+		left:45%;
+		top:20vh;
+		transition:2s;
+		/*margin-right:10%;*/
+	}
+	#date{
+		width:100px;
+		height:150px;
+		border: 1px solid gray;
+	}
+	#chat{
+		width:40px;
+		height:40px;
+		z-index:10;
+		position:fixed;
+		left:93%;
+		top:86%;
+		/*background-color: #F5E49F;*/
+		border-radius:50%;
+		background-image: url('background.jpg');/*在body背景放圖*/
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+	}
+	#chat:hover{
+		background-image: url('117be79a022c600c73774e.jpg');
+	}
+	#main_right{
+		position:relative;
+		z-index:2;
+		margin-top:15vh;
+		margin-bottom:10vh;
+		width:150px;
+		height:80vh;
+		float:right;
+		transition:2s;
+		/*background-color:black;*/
+	}
+	
+	#main_right a{
+		font-family: impact;
+		display:block;
+		color:rgb(203,64,66);
+		font-size:15px;
+		font-weight:80px;
+		text-decoration:none;
+		text-align:right;
+		margin:25px 0px;
+		text-align: center;
+	}
+	#main_right a:hover{
+		border-right: 5px solid #E83015;
+		color:#E83015;
+	}
+	
+</style>
+<script >
+	$(document).ready(function(){
+		const select11 = $("#select11").offset().top;
+		const select22 = $("#select22").offset().top;
+		const select33 = $("#select33").offset().top;
+		const select44 = $("#select44").offset().top;
+		const select55 = $("#select55").offset().top;
+		const select66 = $("#select66").offset().top;
+
+		$(".select").click(function(){
+			$("#home_right").css("width","80%");
+			$("#home_left").css("width","20%");
+			$("#main_left").css("left","-70%");
+			$("#video").css("width","20%");
+			
+
+		});
+		$(".home").click(function(){
+			$("#home_right").css("width","0%");
+			$("#home_left").css("width","100%");
+			$("#main_left").css("left","45%");
+			$("#video").css("width","100%");
+		});
+
+		
+
+		$("#select1").click(function(){
+			$("#home_right").stop(true);
+			// $("#home_right").animate({scrollTop:600}, 1500);
+			$("#home_right").animate({scrollTop:select11 - 38}, 700);
+			return false;
+		});
+
+		$("#select2").click(function(){
+			$("#home_right").stop(true);
+			// $("#home_right").animate({scrollTop:600}, 1500);
+			$("#home_right").animate({scrollTop:select22 - 38}, 700);
+			return false;
+		});
+
+		$("#select3").click(function(){
+			$("#home_right").stop(true);
+			// $("#home_right").animate({scrollTop:600}, 1500);
+			$("#home_right").animate({scrollTop:select33 - 38}, 700);
+			return false;
+		});
+
+		$("#select4").click(function(){
+			$("#home_right").stop(true);
+			// $("#home_right").animate({scrollTop:600}, 1500);
+			$("#home_right").animate({scrollTop:select44 - 38}, 700);
+			return false;
+		});
+
+		$("#select5").click(function(){
+			$("#home_right").stop(true);
+			// $("#home_right").animate({scrollTop:600}, 1500);
+			$("#home_right").animate({scrollTop:select55 - 38}, 700);
+			return false;
+		});
+
+		$("#select6").click(function(){
+			$("#home_right").stop(true);
+			// $("#home_right").animate({scrollTop:600}, 1500);
+			$("#home_right").animate({scrollTop:select66 - 38}, 700);
+			return false;
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="wapper">
+		
+		<div id="home_left">
+			<div id="video">
+				<video  autoplay loop muted="muted">
+		<source src="Pexels Videos 2778524.mp4" type="video/mp4" media="" alt="攝影師：Ruvim Miksanskiy，連結：Pexels">
+	</video>
+			</div>
+			<div id="main_left">
+				<img src="footershit@2x.png">
+				<div id="date"></div>
+			</div>
+		
+			<nav id="main_right">
+				<a href="#home_left" id="select11" class="home">首頁<div>HOME</div></a>
+				<a href="#1_aboutUs" id="select1" class="select">Hotel unus<div>ABOUT UNUS</div></a>
+				<a href="#2_reserveRoom" id="select2" class="select">即刻訂房<div>BOOK</div></a>
+				<a href="#3_roomType" id="select3" class="select">房型瀏覽<div>GALLERY</div></a>
+				<a href="#4_restaurant" id="select4" class="select">餐廳<div>RESTAURANT</div></a>
+				<a href="#5_orderfood" id="select5" class="select">點餐<div>ORDER</div></a>
+				<a href="#6_contactUs" id="select6" class="select">聯絡我們<div>CONTACT</div></a>
+			</nav>
+			<img id="chat"src="message.png">
+			
+		</div>
+		
+		<div id="home_right">
+			<section>
+			<div class="_block">
+			<a NAME="1_aboutUs"></a><h1>關於我們</h1>
+				<div>
+					1Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				
+				</div>
+			</div>
+
+			<a name="2_reserveRoom"></a>
+			<div class="_block">
+				<h1 id="select22" class="move">即刻訂房</h1>
+				<div>
+					2Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+			
+			
+			<div  id="3_roomType" class="_block">
+				<a NAME="3_roomType"></a>
+				<h1 id="select33" class="move">房型瀏覽</h1>
+				<div>
+					3Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+		
+				
+			
+			
+			<div class="_block">
+				<!-- <a name="4_restaurant"></a> -->
+					<h1 id="select44" class="move">餐廳</h1>
+				<div>
+					4Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+
+			
+			<div class="_block">
+				<a NAME="select55"></a>
+				<h1 id="select55" class="move">點餐</h1>
+				
+				<div>
+					5Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+		
+			<div  class="_block">
+				<!-- <a NAME="6_contactUs"></a> -->
+				<h1 id="select66" class="move">聯繫我們</h1>
+				<div>
+					6Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+				</div>
+				
+			</div>
+			</section>
+		</div>
+	</div>
+
+</body>
+</html>
