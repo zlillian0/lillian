@@ -5,7 +5,7 @@ import java.io.*;
 
 public class Homework07_02 {
 	public static void main(String args[]) throws IOException {
-		int i=0;
+		int i=1000;
 		int[] a=new int[10];
 		for(i=0;i<a.length;i++) {
 		a[i]=(int)((Math.random()*1000)+1);
