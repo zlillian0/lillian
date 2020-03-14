@@ -7,6 +7,7 @@ public class Homework07_02 {
 	public static void main(String args[]) throws IOException {
 		int i=250000;
 		int[] a=new int[10];
+		String qwe = "";
 		for(i=0;i<a.length;i++) {
 		a[i]=(int)((Math.random()*1000)+1);
 		}
